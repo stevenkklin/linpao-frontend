@@ -1,14 +1,17 @@
-<script setup lang="ts">
-  import {ref} from "vue";
-  import {showToast} from "vant";
-  import Index from "../pages/Index.vue";
-  import Team from "../pages/Team.vue";
+<script lang="ts" setup>
+import {useRouter} from "vue-router";
 
-  const onClickLeft = () => alert('左');
-  const onClickRight = () => alert('右');
+const router = useRouter();
 
-  const active = ref('index');
-  const onChange = (index) => showToast(`标签 ${index}`);
+const onClickLeft = () => {
+  router.back();
+};
+const onClickRight = () => {
+  router.push('/search')
+};
+
+
+const onChange = () => {}
 
 </script>
 
@@ -24,20 +27,18 @@
       <van-icon name="search" size="18" />
     </template>
   </van-nav-bar>
-  <div>
-    <template v-if="active === 'index'">
-      <Index />
-    </template>
-    <template v-if="active === 'team'">
-      <Team />
-    </template>
+  <div id="content">
+    <router-view />
   </div>
-  <van-tabbar v-model="active" @change="onChange">
-    <van-tabbar-item icon="home-o" name="index">主页</van-tabbar-item>
-    <van-tabbar-item icon="search" name="team">队伍</van-tabbar-item>
-    <van-tabbar-item icon="friends-o" name="user">个人</van-tabbar-item>
+  <van-tabbar route @change="onChange">
+    <van-tabbar-item replace to="/" icon="home-o" name="index">主页</van-tabbar-item>
+    <van-tabbar-item replace to="/model" icon="search" name="team">队伍</van-tabbar-item>
+    <van-tabbar-item replace to="/user" icon="friends-o" name="user">个人</van-tabbar-item>
   </van-tabbar>
 </template>
+
+
+
 
 
 <style scoped>
