@@ -9,8 +9,10 @@ import {useRoute} from "vue-router";
 
   const route = useRoute();
   const value = ref({
-    ...(route.query as { currentValue: string, editKey: string, editName: string })
-  });
+    editKey: route.query.editKey,
+    currentValue: route.query.currentValue,
+    editName: route.query.editName,
+  })
 </script>
 
 <template>
