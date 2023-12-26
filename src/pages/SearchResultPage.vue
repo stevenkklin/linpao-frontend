@@ -52,13 +52,12 @@ onMounted(async () => {
 <template>
   <van-empty description="暂无用户匹配" v-if="userList == null || userList.length < 1" />
   <van-card v-for="user in userList"
-
       :desc="user.profile"
       :title="`${user.username} (${user.planetCode})`"
       :thumb="user.avatarUrl"
   >
     <template #tags>
-      <van-tag plain type="primary" v-for="tag in tags" style="margin-right: 10px;margin-bottom: 6px">
+      <van-tag plain type="primary" v-for="tag in user.tags" style="margin-right: 10px;margin-bottom: 6px">
         {{ tag }}
       </van-tag>
     </template>

@@ -6,7 +6,6 @@ import {useRouter} from "vue-router";
 const router = useRouter();
 const searchText = ref('');
 const onSearch = () => {
-  // console.log(searchText.value)
   // console.log(originList[0].children[0].text)
   tagList.value = originList.map(parentTag => {
     const tempTag = {...parentTag};
