@@ -7,7 +7,8 @@ import User from '../pages/UserPage.vue'
 import Search from '../pages/SearchPage.vue'
 import modelPage from '../pages/ModelPage.vue'
 import userEditPage from '../pages/UserEditPage.vue'
-import SearchResultPage from '../pages/SearchResultPage.vue'
+import userLoginPage from "../pages/UserLoginPage.vue";
+import SearchResultPage from "../pages/SearchResultPage.vue";
 
 const routes = [
     { path: '/', component: Index },
@@ -16,7 +17,9 @@ const routes = [
     { path: '/search', component: Search },
     { path: '/model', component: modelPage },
     { path: '/user/edit', component: userEditPage },
-    { path: '/user/list', component: SearchResultPage }
+    { path: '/user/list', component: SearchResultPage },
+    { path: '/user/login', component: userLoginPage }
+
 ]
 
 export default routes
