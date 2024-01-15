@@ -1,20 +1,17 @@
 <script setup lang="ts">
 
 import {useRouter} from "vue-router";
-import {onMounted, ref} from "vue";
-import myAxios from "../plugins/myAxios.ts";
-import {showFailToast, showSuccessToast} from "vant/es";
-import {getCurrentUser} from "../service/user.ts";
+import {ref} from "vue";
 
-onMounted(async ()=> {
-  const res = await getCurrentUser();
-  if (res.code == 0 && res.data != null) {
-    user.value = res.data;
-    showSuccessToast("获取用户信息成功");
-  } else {
-    showFailToast("获取用户信息失败");
-  }
-})
+// onMounted(async ()=> {
+//   const res = await getCurrentUser();
+//   if (res.code == 0 && res.data != null) {
+//     user.value = res.data;
+//     showSuccessToast("获取用户信息成功");
+//   } else {
+//     showFailToast("获取用户信息失败");
+//   }
+// })
 
 const user = ref();
 

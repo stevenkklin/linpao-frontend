@@ -11,10 +11,13 @@
         "lint": "eslint src/**/*.ts"
     },
     "dependencies": {
+        "@types/echarts": "^4.9.22",
         "axios": "^1.6.2",
+        "echarts": "^5.4.3",
         "qs": "^6.11.2",
         "vant": "^4.6.2",
         "vue": "^3.3.4",
+        "vue-echarts": "^6.6.8",
         "vue-router": "^4.0.13"
     },
     "devDependencies": {
